@@ -1,5 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/header.html" />
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,7 +9,7 @@
     </head>
     <body>
          <nav>
-    <b><a href="index.html">Home</a> &nbsp <a href="Login.html">Login</a></b>   
+    <b><a href="index.jsp">Home</a> &nbsp <a href="Login.html">Login</a></b>   
 </nav>
     <h1>Please enter your information below</h1>
     <p><i>${message}</i></p>
@@ -34,3 +36,4 @@
     </form>
     </body>
 </html>
+<c:import url="/footer.jsp" />

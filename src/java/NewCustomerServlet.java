@@ -3,6 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 
+
 public class NewCustomerServlet extends HttpServlet {
 @Override 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -16,13 +17,14 @@ public class NewCustomerServlet extends HttpServlet {
         String zipCode = request.getParameter("zipCode");
         String  email = request.getParameter("email");
         
-        //response.sendRedirect("Success.html"); this sends to success.html
+        
         
         String url = "/New_customer.jsp";
         
        
         // validate the parameters
             String message;
+           
             if (
                     firstName == null || firstName.isEmpty() ||
                     lastName == null || lastName.isEmpty() || 
@@ -39,11 +41,15 @@ public class NewCustomerServlet extends HttpServlet {
                 url = "/New_customer.jsp";
             } 
             else {
+                User user = new User (lastName+zipCode, "welcome1", firstName,lastName,Phone,Address,City,State,zipCode,email);
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
+                
                 message="";
-                url = "/Success.html";
+                url = "/Success.jsp";
                 
             }
-          
+            
             request.setAttribute("message", message);
             getServletContext()
                 .getRequestDispatcher(url)

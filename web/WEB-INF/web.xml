@@ -24,6 +24,14 @@
         <servlet-name>TransactionServlet</servlet-name>
         <url-pattern>/TransactionServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>resetPassServlet</servlet-name>
+        <servlet-class>resetPassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>resetPassServlet</servlet-name>
+        <url-pattern>/resetPassServlet</url-pattern>
+    </servlet-mapping>
     <!-- you can comment out these tags when the app is in development -->
     <error-page>
         <error-code>404</error-code>

@@ -16,7 +16,7 @@ public class LoginServlet extends HttpServlet {
            
             if (Username.equals("jsmith@toba.com") && Password.equals("letmein")) 
             {
-                response.sendRedirect("Account_activity.html");
+                response.sendRedirect("Account_activity.jsp");
             } 
             else {
                 response.sendRedirect("Login_failure.html");

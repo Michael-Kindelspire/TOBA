@@ -1,6 +1,12 @@
+package TOBA.Business;
+
+import TOBA.Business.Account;
+import TOBA.Business.User;
+import TOBA.data.AccountDB;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import TOBA.data.UserDB;
 
 
 
@@ -45,7 +51,13 @@ public class NewCustomerServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
                 
+                //db stuff here
+                UserDB.insert(user);
+                Account account = new Account (25, user);
+                AccountDB.insert(account);
                 message="";
+                
+                
                 url = "/Success.jsp";
                 
             }

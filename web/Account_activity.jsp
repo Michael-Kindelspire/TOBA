@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav>
-    <b><a href="index.jsp">Home</a> &nbsp <a href="Login.html">Login</a></b>   
+    <b><a href="index.jsp">Home</a> &nbsp<p><a href="addFunds.jsp">Add Funds</a></p>&nbsp <a href="Login.html">Login</a></b>   
 </nav>
     <h1>Account Activity</h1>
     
@@ -18,7 +18,7 @@
 </c:if>
     <c:if test="${not empty user.username}">
         Welcome to your account activity page ${user.firstName} ${user.lastName}
-        <br>This is for testing resetpassword #1${message} #2${message2}&nbsp${user.password}
+   
 </c:if>
 </body>
 </html>

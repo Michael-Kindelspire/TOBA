@@ -1,5 +1,8 @@
+package TOBA.Business;
+
+import TOBA.Business.User;
+import TOBA.data.UserDB;
 import java.io.*;
-import java.util.Enumeration;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
@@ -16,13 +19,12 @@ public class resetPassServlet extends HttpServlet {
         //cant figure out how to modify a portion of the user object saved in session
         
         HttpSession session = request.getSession();
-        Enumeration attributeNames = session.getAttributeNames();
         
-        String oldPass = (String) session.getAttribute("password");
-        request.setAttribute("message", oldPass);
-        request.setAttribute("message2", newPass);
-        request.setAttribute("password", newPass);
-        session.setAttribute("password", newPass);
+        User user =(User)session.getAttribute("user");
+        user.setPassword(newPass);
+         session.setAttribute("user", user);
+         UserDB.update(user);
+       
         
         
           getServletContext()

@@ -2,7 +2,11 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>TOBA.Business.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountServlet</servlet-name>
+        <servlet-class>TOBA.Business.AccountServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -10,7 +14,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>NewCustomerServlet</servlet-name>
-        <servlet-class>NewCustomerServlet</servlet-class>
+        <servlet-class>TOBA.Business.NewCustomerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>NewCustomerServlet</servlet-name>
@@ -18,7 +22,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>TransactionServlet</servlet-name>
-        <servlet-class>TransactionServlet</servlet-class>
+        <servlet-class>TOBA.Business.TransactionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>TransactionServlet</servlet-name>
@@ -26,7 +30,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>resetPassServlet</servlet-name>
-        <servlet-class>resetPassServlet</servlet-class>
+        <servlet-class>TOBA.Business.resetPassServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>resetPassServlet</servlet-name>
@@ -41,8 +45,11 @@
         <exception-type>java.lang.Throwable</exception-type>
         <location>/Error_java.jsp</location>
     </error-page>
+    <servlet-mapping>
+        <servlet-name>AccountServlet</servlet-name>
+        <url-pattern>/AccountServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
-    
 </web-app>

@@ -9,7 +9,7 @@
     </head>
     <body>
          <nav>
-    <b><a href="index.jsp">Home</a> &nbsp <a href="Login.html">Login</a></b>   
+    <b><a href="index.jsp">Home</a> &nbsp <a href="addFunds.jsp">Add Funds</a> &nbsp <a href="Login.html">Login</a></b>   
 </nav>
     <h1>Please enter your information below</h1>
     <p><i>${message}</i></p>

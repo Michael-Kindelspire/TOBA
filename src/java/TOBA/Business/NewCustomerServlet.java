@@ -1,12 +1,11 @@
 package TOBA.Business;
 
-import TOBA.Business.Account;
-import TOBA.Business.User;
 import TOBA.data.AccountDB;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import TOBA.data.UserDB;
+import java.security.NoSuchAlgorithmException;
 
 
 
@@ -41,13 +40,16 @@ public class NewCustomerServlet extends HttpServlet {
                     zipCode == null || zipCode.isEmpty() ||       
                     email == null || email.isEmpty()       
                            
-                ) 
+                )
             {
                 message = "Please fill out all fields.";
                 url = "/New_customer.jsp";
             } 
             else {
-                User user = new User (lastName+zipCode, "welcome1", firstName,lastName,Phone,Address,City,State,zipCode,email);
+               
+                String hashedPassword = TOBA.util.PasswordUtil.hashAndSaltPassword("welcome1");
+                
+                User user = new User (lastName+zipCode, hashedPassword, firstName,lastName,Phone,Address,City,State,zipCode,email);
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
                 

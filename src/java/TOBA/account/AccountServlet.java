@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TOBA.Business;
+package TOBA.account;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -85,4 +85,4 @@ public class AccountServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-}
+
